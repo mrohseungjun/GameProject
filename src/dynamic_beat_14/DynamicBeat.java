@@ -146,8 +146,6 @@ public class DynamicBeat extends JFrame {
 				buttonEnteredMusic.start();
 				introMusic.close();
 				selectTrack(0);
-				Music selectedMusic = new Music("Joakim Karud - Mighty Love.mp3",true);
-				selectedMusic.start();
 				enterMain();
 			}
 			
@@ -378,6 +376,11 @@ public class DynamicBeat extends JFrame {
 		}
 	
 		paintComponents(g);
+		try {
+			Thread.sleep(5);
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 		this.repaint();
 	}
 	
@@ -413,8 +416,7 @@ public class DynamicBeat extends JFrame {
 		rightButton.setVisible(false);
 		easyButton.setVisible(false);
 		hardButton.setVisible(false);
-		background = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getGameImage()))
-				.getImage();
+		background = new ImageIcon(Main.class.getResource("../images/" + trackList.get(nowSelected).getGameImage())).getImage();
 		backButton.setVisible(true);
 		isGameScreen = true;
 		game = new Game(trackList.get(nowSelected).getTitleName(), difficulty, trackList.get(nowSelected).getGameMusic());
@@ -439,8 +441,7 @@ public class DynamicBeat extends JFrame {
 	public void enterMain() {
 		startButton.setVisible(false);
 		quitButton.setVisible(false);
-		background = new ImageIcon(Main.class.getResource("../images/main_Bakground.jpg"))
-				.getImage();
+		background = new ImageIcon(Main.class.getResource("../images/main_Bakground.jpg")).getImage();
 		isMainScreen = true;
 		leftButton.setVisible(true);
 		rightButton.setVisible(true);
