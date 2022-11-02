@@ -4,6 +4,7 @@ public class Beat {
 	
 	private int time;
 	private String noteName;
+	private String noteName2;
 	
 	public int getTime() {
 		return time;
